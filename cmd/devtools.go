@@ -22,7 +22,7 @@ var devtoolsCmd = &cobra.Command{
 		"create",
 		"submit_cran",
 	},
-	Run: makeRun("devtools"),
+	Run: makeRun("devtools", true),
 }
 
 func init() {

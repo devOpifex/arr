@@ -14,7 +14,7 @@ var rsconnectCmd = &cobra.Command{
 		"accountUsage",
 		"deployApp",
 	},
-	Run: makeRun("rsconnect"),
+	Run: makeRun("rsconnect", true),
 }
 
 func init() {
