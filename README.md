@@ -20,7 +20,7 @@ go install github.com/devOpifex/arr@latest
 arr -h
 ```
 
-```
+```bash
 Call common R functions from your terminal
 
 Usage:
