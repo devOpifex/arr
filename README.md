@@ -1,6 +1,6 @@
 # arr
 
-Convenient CLI for R.
+A light wrapper arround `R` to 
 
 ## Install
 
