@@ -5,11 +5,11 @@ import (
 )
 
 var sourceCmd = &cobra.Command{
-	Use:   "source",
-	Short: "Interact with the {devtools} package",
-	Long:  `Build, document, install, etc. packages`,
+	Use:   "script",
+	Short: "Run scripts",
+	Long:  `Run R scripts`,
 	Args:  cobra.MinimumNArgs(1),
-	Run:   makeRun("", true),
+	Run:   makeRun("", "-f"),
 }
 
 func init() {

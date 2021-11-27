@@ -6,10 +6,10 @@ import (
 
 var runCmd = &cobra.Command{
 	Use:   "run",
-	Short: "Interact with the {devtools} package",
-	Long:  `Build, document, install, etc. packages`,
+	Short: "Run code",
+	Long:  `Run arbitrary functions or expressions`,
 	Args:  cobra.MinimumNArgs(1),
-	Run:   makeRun("", false),
+	Run:   makeRun("", "-e"),
 }
 
 func init() {

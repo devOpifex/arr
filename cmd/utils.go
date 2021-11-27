@@ -24,23 +24,24 @@ func getPath() string {
 	return p
 }
 
-func makeArg(pkg, arg string) string {
+func makeArg(pkg, arg, first string) string {
 	if pkg != "" {
 		return pkg + "::" + arg + "();"
+	}
+
+	if first == "-f" {
+		return arg
 	}
 
 	return arg + ";"
 }
 
-func makeRun(pkg string, e bool) func(cmd *cobra.Command, args []string) {
+func makeRun(pkg, first string) func(cmd *cobra.Command, args []string) {
 	return func(cmd *cobra.Command, args []string) {
-		var rArgs string
-		if e {
-			rArgs = "-e "
-		}
+		rArgs := first + " "
 
 		for _, arg := range args {
-			rArgs += makeArg(pkg, arg)
+			rArgs += makeArg(pkg, arg, first)
 		}
 
 		path := getPath()

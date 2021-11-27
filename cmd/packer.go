@@ -40,7 +40,7 @@ var packerCmd = &cobra.Command{
 		"precommit_hook",
 		"rprofile_adapt",
 	},
-	Run: makeRun("packer", true),
+	Run: makeRun("packer", "-e"),
 }
 
 func init() {

@@ -31,7 +31,7 @@ var usethisCmd = &cobra.Command{
 		"git",
 		"github",
 	},
-	Run: makeRun("usethis", true),
+	Run: makeRun("usethis", "-e"),
 }
 
 func init() {
