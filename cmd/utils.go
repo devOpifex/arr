@@ -8,17 +8,30 @@ import (
 	"github.com/spf13/cobra"
 )
 
+func getPath() string {
+	var p string
+
+	if path != "" {
+		return path
+	}
+
+	p, err := exec.LookPath("R")
+
+	if err != nil {
+		fmt.Println("Could not locate R installation")
+	}
+
+	return p
+}
+
 func makeRun(pkg string) func(cmd *cobra.Command, args []string) {
 	return func(cmd *cobra.Command, args []string) {
 		rArgs := "-e "
 		for _, arg := range args {
 			rArgs += pkg + "::" + arg + "();"
 		}
-		path, err := exec.LookPath("R")
 
-		if err != nil {
-			fmt.Println("Could not locate R installation")
-		}
+		path := getPath()
 
 		rCommand := exec.Command(path, rArgs)
 		stdout, _ := rCommand.StdoutPipe()

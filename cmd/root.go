@@ -8,6 +8,7 @@ import (
 )
 
 var verbose bool
+var path string
 
 var rootCmd = &cobra.Command{
 	Use:     "arr",
@@ -22,6 +23,7 @@ var rootCmd = &cobra.Command{
 
 func init() {
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", true, "verbose output")
+	rootCmd.PersistentFlags().StringVarP(&path, "path", "p", "", "path to R installation")
 }
 
 func Execute() {
