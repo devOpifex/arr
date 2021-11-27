@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"bufio"
 	"fmt"
 	"os/exec"
 
@@ -13,11 +14,22 @@ func makeRun(pkg string) func(cmd *cobra.Command, args []string) {
 		for _, arg := range args {
 			rArgs += pkg + "::" + arg + "();"
 		}
-		path, _ := exec.LookPath("R")
-		rCommand := exec.Command(path, rArgs)
+		path, err := exec.LookPath("R")
 
-		if err := rCommand.Run(); err != nil {
-			fmt.Println(err)
+		if err != nil {
+			fmt.Println("Could not locate R installation")
 		}
+
+		rCommand := exec.Command(path, rArgs)
+		stdout, _ := rCommand.StdoutPipe()
+
+		rCommand.Start()
+		scanner := bufio.NewScanner(stdout)
+		scanner.Split(bufio.ScanLines)
+		for scanner.Scan() {
+			line := scanner.Text()
+			fmt.Println(line)
+		}
+		rCommand.Wait()
 	}
 }
