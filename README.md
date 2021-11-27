@@ -8,6 +8,12 @@ A light wrapper around R.
 go get github.com/devOpifex/arr
 ```
 
+or
+
+```bash
+go install github.com/devOpifex/arr@latest
+```
+
 ## Examples
 
 With built-in convenience for certain packages.

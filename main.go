@@ -1,6 +1,6 @@
 package main
 
-import "github.com/JohnCoene/arr/cmd"
+import "github.com/devOpifex/arr/cmd"
 
 func main() {
 	cmd.Execute()

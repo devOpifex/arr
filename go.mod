@@ -1,4 +1,4 @@
-module github.com/JohnCoene/arr
+module github.com/devOpifex/arr
 
 go 1.16
 
