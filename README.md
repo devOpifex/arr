@@ -14,4 +14,5 @@ go get github.com/devOpifex/arr
 arr devtools document check install
 arr usethis mit_license pipe
 arr packer bundle
+arr rsConnect writeManifest
 ```
