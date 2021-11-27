@@ -6,8 +6,8 @@ import (
 
 var sourceCmd = &cobra.Command{
 	Use:   "script",
-	Short: "Run scripts",
-	Long:  `Run R scripts`,
+	Short: "run scripts",
+	Long:  `run R scripts`,
 	Args:  cobra.MinimumNArgs(1),
 	Run:   makeRun("", "-f"),
 }

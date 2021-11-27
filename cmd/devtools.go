@@ -6,8 +6,8 @@ import (
 
 var devtoolsCmd = &cobra.Command{
 	Use:   "devtools",
-	Short: "Interact with the {devtools} package",
-	Long:  `Build, document, install, etc. packages`,
+	Short: "interact with the {devtools} package",
+	Long:  `build, document, install, etc. packages`,
 	Args:  cobra.MinimumNArgs(1),
 	ValidArgs: []string{
 		"document",

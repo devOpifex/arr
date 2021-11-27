@@ -6,8 +6,8 @@ import (
 
 var usethisCmd = &cobra.Command{
 	Use:   "usethis",
-	Short: "Interact with the {usethis} package",
-	Long:  `Call use_* functions.`,
+	Short: "interact with the {usethis} package",
+	Long:  `call use_* functions.`,
 	Args:  cobra.MinimumNArgs(1),
 	ValidArgs: []string{
 		"build_ignore",

@@ -4,8 +4,8 @@ import "github.com/spf13/cobra"
 
 var packerCmd = &cobra.Command{
 	Use:   "packer",
-	Short: "Interact with the {packer} package",
-	Long:  `Bundle, test, and more from the command line.`,
+	Short: "interact with the {packer} package",
+	Long:  `bundle, test, and more from the command line.`,
 	Args:  cobra.MinimumNArgs(1),
 	ValidArgs: []string{
 		"bundle",
