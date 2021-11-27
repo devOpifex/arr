@@ -24,11 +24,13 @@ func makeRun(pkg string) func(cmd *cobra.Command, args []string) {
 		stdout, _ := rCommand.StdoutPipe()
 
 		rCommand.Start()
-		scanner := bufio.NewScanner(stdout)
-		scanner.Split(bufio.ScanLines)
-		for scanner.Scan() {
-			line := scanner.Text()
-			fmt.Println(line)
+		if verbose {
+			scanner := bufio.NewScanner(stdout)
+			scanner.Split(bufio.ScanLines)
+			for scanner.Scan() {
+				line := scanner.Text()
+				fmt.Println(line)
+			}
 		}
 		rCommand.Wait()
 	}
