@@ -1,6 +1,6 @@
 # arr
 
-A light wrapper arround `R` to 
+A light wrapper arround R.
 
 ## Install
 
