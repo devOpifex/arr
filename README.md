@@ -20,6 +20,14 @@ go install github.com/devOpifex/arr@latest
 arr -h
 ```
 
+## Completion
+
+See documentation.
+
+```bash
+arr completion -h
+```
+
 ## Examples
 
 Run a script
