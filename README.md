@@ -60,4 +60,6 @@ arr usethis use_gpl_license -1=3 -2=TRUE
 
 # as quoted string
 arr packer bundle --arg1s="prod"
+# or 
+arr packer bundle -1="'prod'"
 ```
