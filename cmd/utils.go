@@ -24,16 +24,60 @@ func getPath() string {
 	return p
 }
 
-func makeArg(pkg, arg, first string) string {
+func makeArgs() string {
+	var args string
+
+	if arg1 == "" && arg1s == "" {
+		return args
+	}
+
+	if arg1 != "" {
+		args += arg1
+	}
+
+	if arg1s != "" {
+		args += "'" + arg1s + "'"
+	}
+
+	if arg2 == "" && arg2s == "" {
+		return args
+	}
+
+	args += ","
+	if arg2 != "" {
+		args += arg2
+	}
+
+	if arg2s != "" {
+		args += "'" + arg2s + "'"
+	}
+
+	if arg3 == "" && arg3s == "" {
+		return args
+	}
+
+	args += ","
+	if arg3 != "" {
+		args += arg3
+	}
+
+	if arg3s != "" {
+		args += "'" + arg3s + "'"
+	}
+
+	return args
+}
+
+func makeCall(pkg, expr, first string) string {
 	if pkg != "" {
-		return pkg + "::" + arg + "();"
+		return pkg + "::" + expr + "(" + makeArgs() + ");"
 	}
 
 	if first == "-f" {
-		return arg
+		return expr
 	}
 
-	return arg + ";"
+	return expr + ";"
 }
 
 func makeRun(pkg, first string) func(cmd *cobra.Command, args []string) {
@@ -41,7 +85,7 @@ func makeRun(pkg, first string) func(cmd *cobra.Command, args []string) {
 		rArgs := first + " "
 
 		for _, arg := range args {
-			rArgs += makeArg(pkg, arg, first)
+			rArgs += makeCall(pkg, arg, first)
 		}
 
 		path := getPath()

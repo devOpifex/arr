@@ -22,15 +22,6 @@ arr -h
 
 ## Examples
 
-With built-in convenience for certain packages.
-
-```bash
-arr devtools document check install
-arr usethis mit_license pipe
-arr packer bundle
-arr rsConnect writeManifest
-```
-
 Run a script
 
 ```bash
@@ -41,4 +32,20 @@ Run R code
 
 ```bash
 arr run 'packer::bundle()'
+```
+
+Using built-in convenience for certain packages.
+
+```bash
+arr devtools document check install
+arr usethis mit_license pipe
+arr packer bundle
+arr rsConnect writeManifest
+```
+
+Passing arguments.
+
+```bash
+arr usethis gpl_license -1=3 -2=TRUE
+arr packer bundle --arg1s="prod"
 ```
