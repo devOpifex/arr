@@ -32,13 +32,12 @@ var rootCmd = &cobra.Command{
 
 Examples:
 
-	# arr package function
 	arr devtools document check install
 	arr usethis use_mit_license use_pipe
 	arr packer bundle
 	arr rsConnect writeManifest
 
-	Passing arguments.
+Passing arguments:
 
 	# bare arguments
 	arr usethis use_gpl_license -1=3 -2=TRUE
