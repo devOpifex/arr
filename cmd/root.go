@@ -17,8 +17,16 @@ var arg2s string
 var arg3s string
 
 var rootCmd = &cobra.Command{
-	Use:     "arr",
-	Aliases: []string{"r"},
+	Use: "arr",
+	ValidArgs: []string{
+		"devtools",
+		"usethis",
+		"script",
+		"run",
+		"packer",
+		"rsconnect",
+		"completion",
+	},
 	Short:   "R from the command line",
 	Long:    `Call common R functions from your terminal`,
 	Version: "0.0.1",
