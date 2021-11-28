@@ -58,6 +58,6 @@ Passing arguments.
 # bare arguments
 arr usethis use_gpl_license -1=3 -2=TRUE
 
-# as quote string
+# as quoted string
 arr packer bundle --arg1s="prod"
 ```
