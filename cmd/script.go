@@ -7,9 +7,10 @@ import (
 var sourceCmd = &cobra.Command{
 	Use:   "script",
 	Short: "run scripts",
-	Long:  `run R scripts`,
-	Args:  cobra.MinimumNArgs(1),
-	Run:   makeRun("", "-f"),
+	Long: `run R scripts
+Example: arr script path/to/file.R`,
+	Args: cobra.MinimumNArgs(1),
+	Run:  makeRun("", "-f"),
 }
 
 func init() {

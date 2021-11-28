@@ -5,8 +5,11 @@ import "github.com/spf13/cobra"
 var packerCmd = &cobra.Command{
 	Use:   "packer",
 	Short: "interact with the {packer} package",
-	Long:  `bundle, test, and more from the command line.`,
-	Args:  cobra.MinimumNArgs(1),
+	Long: `bundle, test, and more from the command line.
+Examples:
+	arr packer bundle
+	`,
+	Args: cobra.MinimumNArgs(1),
 	ValidArgs: []string{
 		"bundle",
 		"bundle_dev",
@@ -39,6 +42,15 @@ var packerCmd = &cobra.Command{
 		"test",
 		"precommit_hook",
 		"rprofile_adapt",
+		"scaffold_rmd",
+		"scaffold_ambiorix",
+		"scaffold_widget",
+		"scaffold_output",
+		"scaffold_bare",
+		"scaffold_golem",
+		"scaffold_extension",
+		"scaffold_leprechaun",
+		"scaffold_input",
 	},
 	Run: makeRun("packer", "-e"),
 }
