@@ -28,7 +28,7 @@ Examples:
 		"create",
 		"submit_cran",
 	},
-	Run: makeRun("devtools", "-e"),
+	Run: makeRun("devtools", "-e -q"),
 }
 
 func init() {

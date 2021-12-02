@@ -17,7 +17,7 @@ Examples:
 		"accountUsage",
 		"deployApp",
 	},
-	Run: makeRun("rsconnect", "-e"),
+	Run: makeRun("rsconnect", "-e -q"),
 }
 
 func init() {

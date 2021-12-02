@@ -36,7 +36,7 @@ Examples:
 		"use_github",
 		"create_package",
 	},
-	Run: makeRun("usethis", "-e"),
+	Run: makeRun("usethis", "-e -q"),
 }
 
 func init() {
