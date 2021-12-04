@@ -10,7 +10,7 @@ var runCmd = &cobra.Command{
 	Long: `run arbitrary functions or expressions
 Example: arr run 'packer::bundle()'`,
 	Args: cobra.MinimumNArgs(1),
-	Run:  makeRun("", "-e -q"),
+	Run:  makeRun("", "-e"),
 }
 
 func init() {

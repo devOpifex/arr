@@ -10,7 +10,7 @@ var sourceCmd = &cobra.Command{
 	Long: `run R scripts
 Example: arr script path/to/file.R`,
 	Args: cobra.MinimumNArgs(1),
-	Run:  makeRun("", "-f -q"),
+	Run:  makeRun("", "-f"),
 }
 
 func init() {

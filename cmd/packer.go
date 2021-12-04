@@ -52,7 +52,7 @@ Examples:
 		"scaffold_leprechaun",
 		"scaffold_input",
 	},
-	Run: makeRun("packer", "-e -q"),
+	Run: makeRun("packer", "-e"),
 }
 
 func init() {
