@@ -82,7 +82,7 @@ func makeCall(pkg, expr, first string) string {
 
 func makeRun(pkg, first string) func(cmd *cobra.Command, args []string) {
 	return func(cmd *cobra.Command, args []string) {
-		rArgs := first + " "
+		var rArgs string
 
 		for _, arg := range args {
 			rArgs += makeCall(pkg, arg, first)
@@ -90,7 +90,7 @@ func makeRun(pkg, first string) func(cmd *cobra.Command, args []string) {
 
 		path := getPath()
 
-		rCommand := exec.Command(path, rArgs)
+		rCommand := exec.Command(path, first, rArgs)
 		stdout, _ := rCommand.StdoutPipe()
 
 		rCommand.Start()
